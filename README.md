@@ -1,7 +1,7 @@
 # openbao-labs
 
-This is a collection of hands-ons labs for [https://killercoda.com](https://killercoda.com).
-Any change on this repository are automatically reflected on killercoda within a few minutes.
+This is a collection of hands-ons labs for [OpenBao](https://openbao.org) running on the Killercoda platform.
+Any change on this repository are automatically reflected on Killercoda within a few minutes.
 
 For initial repository onboarding refer to [Killercoda documentation](https://killercoda.com/creators/get-started).
 There is also docs available for [creating labs](https://killercoda.com/creators).
