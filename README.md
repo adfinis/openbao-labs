@@ -3,7 +3,8 @@
 This is a collection of hands-ons labs for [https://killercoda.com](https://killercoda.com).
 Any change on this repository are automatically reflected on killercoda within a few minutes.
 
-Killercoda provides docs [initial repository setup](https://killercoda.com/creators/get-started). There is also docs available for [setting up the labs](https://killercoda.com/creators).
+For initial repository onboarding refer to [Killercoda documentation](https://killercoda.com/creators/get-started).
+There is also docs available for [creating labs](https://killercoda.com/creators).
 
 ## Available Labs
 
