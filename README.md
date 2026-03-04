@@ -12,3 +12,13 @@ There is also docs available for [creating labs](https://killercoda.com/creators
 - **[OpenBao Shamir Unseal](./openbao-manual-unseal)**: Learn about OpenBao manual unsealing process with Shamir.
 - **[OpenBao Auto Unseal](./openbao-auto-unseal)**: Learn about OpenBao auto unsealing process.
 - **[OpenBao Raft Snapshot](./openbao-snapshots)**: Learn about OpenBao raft snapshot and restore process.
+
+## Contributing
+
+Feel free to contribute and add your own labs. 
+
+You can easily tests the labs on your own account before submitting a pull request :
+
+1. Fork the repository
+2. Onboard your [forked repository on Killercoda](https://killercoda.com/creators/get-started)
+3. Test your labs :)
