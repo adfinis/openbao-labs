@@ -1,0 +1,3 @@
+echo Preparing the environment...
+while [ ! -f /tmp/ready ]; do sleep 1; done
+echo Ready to start!

@@ -1,0 +1,35 @@
+{
+  "title": "OpenBao Basics",
+  "description": "Learn OpenBao basics",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "foreground":"scripts/foreground.sh",
+      "background":"scripts/background.sh"
+    },
+    "steps": [
+      {
+        "title": "Dev mode",
+        "text": "step1.md"
+      },
+      {
+        "title": "Get OpenBao health state",
+        "text": "step2.md"
+      },
+      {
+        "title": "Basic commands",
+        "text": "step3.md"
+      },
+      {
+        "title": "Interacting directly with the HTTP API",
+        "text": "step4.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}

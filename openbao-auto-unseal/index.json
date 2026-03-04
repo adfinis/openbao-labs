@@ -1,0 +1,45 @@
+{
+  "title": "OpenBao Auto Unseal",
+  "description": "Learn about OpenBao auto unsealing processs",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "foreground":"scripts/foreground.sh",
+      "background":"scripts/background.sh"
+    },
+    "steps": [
+      {
+        "title": "Auto Unseal with Static Key",
+        "text": "step1/text.md"
+      },
+      {
+        "title": "Create the static key",
+        "text": "step2/text.md"
+      },
+      {
+        "title": "Configure OpenBao seal stanza",
+        "text": "step3/text.md"
+      },
+      {
+        "title": "Deploy OpenBao with the Helm chart",
+        "text": "step4/text.md"
+      },
+      {
+        "title": "Initialize OpenBao and first login",
+        "text": "step5/text.md",
+        "verify": "scripts/verify.sh"
+      }
+    ],
+    "assets": {
+      "host01": [
+        {"file": "**", "target": "/root/assets", "chmod": "+rwx"}
+      ]
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}

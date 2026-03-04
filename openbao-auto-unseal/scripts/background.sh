@@ -1,0 +1,14 @@
+export BAO_HELM_VERSION=0.25.6
+export BAO_CLI_VERSION=2.5.1
+
+# Deploy OpenBao
+helm repo add openbao https://openbao.github.io/openbao-helm
+helm repo update
+kubectl apply -f /root/assets/node-port.yaml
+
+# Install OpenBao CLI
+wget https://github.com/openbao/openbao/releases/download/v$BAO_CLI_VERSION/bao_${BAO_CLI_VERSION}_Linux_x86_64.tar.gz
+tar xzf bao_${BAO_CLI_VERSION}_Linux_x86_64.tar.gz
+mv bao /usr/local/bin/
+
+echo done > /tmp/ready

@@ -1,0 +1,80 @@
+injector:
+  enabled: false
+server:
+  volumes:
+    - name: static-unseal-key
+      secret:
+        secretName: openbao-unseal-key
+  volumeMounts:
+    - name: static-unseal-key
+      mountPath: /bao/unseal
+  standalone:
+    config: |
+      listener "tcp" {
+        tls_disable = 1
+        address = "[::]:8200"
+        cluster_address = "[::]:8201"
+      }
+      storage "raft" {
+        path = "/openbao/data"
+      }
+      seal "static" {
+        current_key_id = "20260302-1"
+        current_key = "file:///bao/unseal/unseal-20260302-1.key"
+      }
+      initialize "userpass" {
+        request "admin-policy" {
+          operation = "create"
+          path = "sys/policies/acl/admin"
+          data = {
+            "policy" = "path \"*\" {\n    capabilities = [\"create\", \"read\", \"patch\", \"update\", \"delete\", \"list\", \"sudo\"]\n}\n"
+          }
+        }
+        request "enable-userpass" {
+          operation = "create"
+          path = "sys/auth/userpass"
+          data = {
+            type = "userpass"
+          }
+        }
+        request "create-admin" {
+          operation = "create"
+          path = "auth/userpass/users/admin"
+          data = {
+            password = "admin123"
+            token_policies = "admin"
+          }
+        }
+        request "mount-kv" {
+          operation = "create"
+          path = "sys/mounts/kv"
+          data = {
+            type = "kv"
+            description = "company kv secrets engine"
+          }
+        }
+        request "create-secrets1" {
+          operation = "create"
+          path = "kv/data/app-1/aws"
+          data = {
+            key = "foobar"
+            secret = "foobar"
+          }
+        }
+        request "create-secrets3" {
+          operation = "create"
+          path = "kv/data/app-2/db"
+          data = {
+            username = "foobar"
+            password = "foobar"
+          }
+        }
+        request "create-secrets2" {
+          operation = "create"
+          path = "kv/data/db/credentials"
+          data = {
+            username = "foobar"
+            password = "foobar"
+          }
+        }
+      }

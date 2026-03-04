@@ -1,0 +1,25 @@
+injector:
+  enabled: false
+server:
+  volumes:
+    - name: static-unseal-key
+      secret:
+        secretName: openbao-unseal-key
+  volumeMounts:
+    - name: static-unseal-key
+      mountPath: /bao/unseal
+  standalone:
+    config: |
+      listener "tcp" {
+        tls_disable = 1
+        address = "[::]:8200"
+        cluster_address = "[::]:8201"
+      }
+      storage "file" {
+        path = "/openbao/data"
+      }
+      # Update this part
+      seal "static" {
+        current_key_id = ""
+        current_key = ""
+      }

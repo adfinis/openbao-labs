@@ -1,0 +1,33 @@
+{
+  "title": "OpenBao Raft Snapshot",
+  "description": "Learn about OpenBao raft snapshot and restore process",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "foreground":"scripts/foreground.sh",
+      "background":"scripts/background.sh"
+    },
+    "steps": [
+      {
+        "title": "Take snapshot",
+        "text": "step1/text.md"
+      },
+      {
+        "title": "Restore snapshot",
+        "text": "step2/text.md",
+        "foreground":"step2/scripts/foreground.sh"
+      }
+    ],
+    "assets": {
+      "host01": [
+        {"file": "**", "target": "/root/assets", "chmod": "+rwx"}
+      ]
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}
