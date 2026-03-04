@@ -2,9 +2,9 @@
 
 ## Context 
 
-An OpenBao server is already deployed with Raft storage backend. A [userpass](https://openbao.org/docs/auth/userpass/) authentication method is already pre-configured. The `BAO_ADDR` environment variable has already been set for you.
+An OpenBao server is already deployed with a Raft storage backend. A [userpass](https://openbao.org/docs/auth/userpass/) authentication method is already pre-configured. The `BAO_ADDR` environment variable has already been set for you.
 
-You can login with the following credentials :
+You can log in with the following credentials:
 > * username : admin
 > * password : admin123
 
@@ -21,6 +21,6 @@ It already contains several secrets
 
 # Take a snapshot
 
-We should take a snapshot in case anything happens to that sever.
+We should take a snapshot in case anything happens to that server.
 
 `bao operator raft snapshot save assets/snapshot.snap`

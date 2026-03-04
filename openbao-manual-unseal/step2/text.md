@@ -12,8 +12,8 @@ Unseal Key 1: ...
 Initial Root Token: ...
 ```
 
-By default OpenBao will generate 5 unseal keys with a threshold of 3. Meaning we would need to provide at least 3 keys to unseal it.
+By default, OpenBao will generate 5 unseal keys with a threshold of 3. Meaning we would need to provide at least 3 keys to unseal it.
 
-Because with used the flags `-key-shares=1 -key-threshold=1`, OpenBao a generates a single key (`key-shares=1`) and we need to submit only one key (`key-threshold=1`) to unseal OpenBao. This is fine for test environment but in production you'll want multiple key shares.
+Because we used the flags `-key-shares=1 -key-threshold=1`, OpenBao generates a single key (`key-shares=1`) and we have to submit only one key (`key-threshold=1`) to unseal OpenBao. This is fine for a test environment, but in production you'll want multiple key shares.
 
-In the real world scenario, we would also need to securely store those keys for latter retrieval.
+In the real-world scenario, we would also need to securely store those keys for later retrieval.

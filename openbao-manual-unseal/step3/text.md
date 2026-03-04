@@ -13,8 +13,8 @@ Sealed          false
 ....
 ``` 
 
-Once the unsealing is completed, you can use the `bao` CLI to interract with Vault (the `BAO_ADDR` variable has already been set for you).
+Once the unsealing is completed, you can use the `bao` CLI to interact with Vault (the `BAO_ADDR` variable has already been set for you).
 
 * Try `bao status`
 * Try `bao login` using the initial root token
-* You can try rescheduling the pod (`kubectl rollout restart sts openbao). You will notice you need to unseal OpenBao again. There is an auto unseal feature which we explore in another lab.
+* You can try rescheduling the pod (`kubectl rollout restart sts openbao). You will notice you need to unseal OpenBao again. There is an auto-unseal feature, which we explore in another lab.

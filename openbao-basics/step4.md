@@ -1,6 +1,6 @@
 OpenBao provides an HTTP API. So anything you can do with CLI, you can also do with a `curl` request to the [corresponding API endpoint](https://openbao.org/api-docs/). When working directly with the API, you will need to pass the token with the header `X-Vault-Token`
 
-For example to list policies we would do :
+For example, to list policies, we would do :
 
 ```
 curl -X LIST --header "X-Vault-Token: ..." http://127.0.0.1:8200/v1/sys/policies/acl
@@ -29,7 +29,7 @@ $ curl -s -X LIST --header "X-Vault-Token: s..." http://127.0.0.1:8200/v1/sys/po
 
 Try it out with different [endpoints of the API](https://openbao.org/api-docs/) !
 
-A cool tip to easily get the full `curl` command is to use the `--output-curl-string` flag of the OpenBao cli. This works for most commands and will output the corresponding `curl` command.
+A cool tip to easily get the full `curl` command is to use the `--output-curl-string` flag of the OpenBao CLI. This works for most commands and will output the corresponding `curl` command.
 
 For example :
 
