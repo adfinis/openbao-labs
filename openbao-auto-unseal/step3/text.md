@@ -16,10 +16,18 @@ server:
       mountPath: /bao/unseal
   standalone:
     config: |
-      ...
+      listener "tcp" {
+        tls_disable = 1
+        address = "[::]:8200"
+        cluster_address = "[::]:8201"
+      }
+      storage "file" {
+        path = "/openbao/data"
+      }
       # Update this part
       seal "static" {
         current_key_id = "20260302-1"
         current_key = "file:///bao/unseal/unseal-20260302-1.key"
       }
+
 ```
