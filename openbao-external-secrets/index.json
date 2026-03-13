@@ -1,0 +1,48 @@
+{
+  "title": "OpenBao and External Secrets Operator",
+  "description": "Learn how to integrate External Secrets Operator with OpenBao",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "foreground":"scripts/foreground.sh",
+      "background":"scripts/background.sh"
+    },
+    "steps": [
+      {
+        "title": "Environment",
+        "text": "step1/text.md"
+      },
+      {
+        "title": "Configure Kubernetes auth method",
+        "text": "step2/text.md"
+      },
+      {
+        "title": "Create policy and identity entities",
+        "text": "step3/text.md"
+      },
+      {
+        "title": "Deploy External Secrets Operator",
+        "text": "step4/text.md"
+      },
+      {
+        "title": "Create a SecretStore resource",
+        "text": "step5/text.md"
+      },
+      {
+        "title": "Create an ExternalSecret resource",
+        "text": "step6/text.md"
+      }
+    ],
+    "assets": {
+      "host01": [
+        {"file": "**", "target": "/root/assets", "chmod": "+rwx"}
+      ]
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}
