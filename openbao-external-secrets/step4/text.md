@@ -14,10 +14,33 @@ A pre-filled manifest is saved at `/root/assets/secretstore.yaml`. You can use t
 
 We need to specify :
 * The server address (you can use `echo $BAO_ADDR` to find it out)
+```yaml
+      # run `echo $BAO_ADDR` to get the server address 
+      server: <server-address>
+```
 * The path to the KV secrets engine : `path: "kv"`
+```yaml
+ # path to the KV secrets engine
+      path: "kv"
+```
 * The auth method mount path: `mountPath: "kubernetes"`
+```yaml
+      auth:
+        kubernetes:
+          # path of the Kubernetes auth method
+          mountPath: "kubernetes"
+```
 * The role to use : `role: "lab"`
+```yaml
+          # role to use for the Kubernetes auth method
+          role: "lab"
+```
 * The service account to use : `name: "my-app"`
+```yaml
+          serviceAccountRef:
+            # service account to use for authentication
+            name: "my-app"
+```
  
 ```yaml
 apiVersion: external-secrets.io/v1

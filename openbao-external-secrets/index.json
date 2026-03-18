@@ -21,16 +21,12 @@
         "text": "step3/text.md"
       },
       {
-        "title": "Deploy External Secrets Operator",
+        "title": "Create a SecretStore resource",
         "text": "step4/text.md"
       },
       {
-        "title": "Create a SecretStore resource",
-        "text": "step5/text.md"
-      },
-      {
         "title": "Create an ExternalSecret resource",
-        "text": "step6/text.md"
+        "text": "step5/text.md"
       }
     ],
     "assets": {
