@@ -1,4 +1,4 @@
-ESO is alread deployed in the `external-secrets` namespace. You can check it with:
+ESO is already deployed in the `external-secrets` namespace. You can check it with
 
 * `kubectl get pods -n external-secrets`
 
@@ -12,13 +12,13 @@ But first we need to create the Kubernetes namespace and service we defined prev
 Now we can create the [SecretStore](https://external-secrets.io/latest/api/secretstore/) resource.
 A pre-filled manifest is saved at `/root/assets/secretstore.yaml`. You can use the editor tab to edit it.
 
-We need to specify :
+We have to specify :
 * The server address (you can use `echo $BAO_ADDR` to find it out)
 ```yaml
       # run `echo $BAO_ADDR` to get the server address 
       server: <server-address>
 ```
-* The path to the KV secrets engine : `path: "kv"`
+* The path to the KV secrets engine: `path: "kv"`
 ```yaml
  # path to the KV secrets engine
       path: "kv"
@@ -30,17 +30,19 @@ We need to specify :
           # path of the Kubernetes auth method
           mountPath: "kubernetes"
 ```
-* The role to use : `role: "lab"`
+* The role to use: `role: "lab"`
 ```yaml
           # role to use for the Kubernetes auth method
           role: "lab"
 ```
-* The service account to use : `name: "my-app"`
+* The service account to use: `name: "my-app"`
 ```yaml
           serviceAccountRef:
             # service account to use for authentication
             name: "my-app"
 ```
+
+You can see the full example below :
  
 ```yaml
 apiVersion: external-secrets.io/v1

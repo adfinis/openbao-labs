@@ -20,7 +20,7 @@ Now, we can create an entity for our service account and attach the policy to th
 
 * `bao write /identity/entity name=lab-my-app policies=read-kv`
 
-The next step is to create an entity alias. For this we need the entity id, the mount accessor of the auth method and the alias name. Remember, in the previous step we added `alias_name_source=serviceaccount_name` to the role configuration. This is relevant here as it tells us how to name our alias so that it can [bind](https://openbao.org/docs/concepts/identity/#mount-bound-aliases) to the actual client. With Kubernetes auth, the default is `alias_name_source=serviceaccount_uid` while more secure is not practical when pre-provisioning the entity.
+The next step is to create an entity alias. For this we need the entity ID, the mount accessor of the auth method, and the alias name. Remember, in the previous step we added `alias_name_source=serviceaccount_name` to the role configuration. This is relevant here as it tells us how to name our alias so that it can [bind](https://openbao.org/docs/concepts/identity/#mount-bound-aliases) to the actual client. With Kubernetes auth, the default is `alias_name_source=serviceaccount_uid` while more secure is impractical when pre-provisioning the entity.
 
 Get the auth method accessor :
 * `bao read /sys/auth/kubernetes`
@@ -34,4 +34,4 @@ canonical_id=<entity_id> \
 mount_accessor=<auth_method_accessor>
 ```
 
-We could have simply attached the policy directly to the role but this is a nicer setup. Actively using entities and aliases allows to leverage [entity metadata to template policies](https://openbao.org/docs/concepts/policies/#parameters).
+We could have simply attached the policy directly to the role, but this is a nicer setup. Actively using entities and aliases allows you to leverage [entity metadata to template policies](https://openbao.org/docs/concepts/policies/#parameters).

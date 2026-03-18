@@ -28,7 +28,7 @@ target:
         property: secret
 ```
 
-Here is the full example (also stored at `/root/assets/externalsecrets.yaml`) :
+Here is the full example (also stored at `/root/assets/externalsecrets.yaml`):
 
 ```yaml
 apiVersion: external-secrets.io/v1
@@ -68,7 +68,7 @@ NAME            TYPE     DATA   AGE
 my-app-secret   Opaque   1      8s
 ``` 
 
-In case of issue, we can also check the state of the ExternalSecret resource.
+In case of an issue, we can also check the state of the ExternalSecret resource.
 
 * `kubectl describe externalsecret my-external-secret -n lab`
 
