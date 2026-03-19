@@ -15,4 +15,4 @@ If all went well, OpenBao should be directly unsealed. We can check that with th
 
 * Use `bao status`
 * Use `bao login` with the initial root token
-* You can also reschedule the pod and see that OpenBao unseal itself again. With `kubectl logs openbao-0` you can see the auto-unsealing process happening.
+* You can also reschedule the pod and see that OpenBao unseals itself again. With `kubectl logs openbao-0` you can see the auto-unsealing process happening.
