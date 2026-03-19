@@ -12,7 +12,9 @@ path "kv/*" {
 }
 ```
 
-Essentially, this policy grants `read` capabilites to anything under the `kv/` path. Let's create the policy :
+Essentially, this policy grants `read` capabilities to anything under the `kv/` path. In a production environment, we would likely make that policy more restrictive.
+
+Let's create the policy :
 
 * `bao policy write read-kv /root/assets/read-kv.hcl`
 
