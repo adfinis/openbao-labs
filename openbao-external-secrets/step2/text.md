@@ -4,7 +4,7 @@ ESO supports several authentication methods from OpenBao. For Kubernetes workloa
 
 For this lab, we will use the Kubernetes auth method.
 
-Let's start by enabling the authentication method.
+Let's start by enabling the authentication method:
 
 * `bao auth enable kubernetes`
 
