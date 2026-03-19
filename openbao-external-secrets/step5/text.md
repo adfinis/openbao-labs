@@ -1,28 +1,28 @@
 Now that our SecretStore resource is ready, we can create an [ExternalSecret](https://external-secrets.io/latest/api/externalsecret/) resource to fetch the secret.
 
 Now that we have a secret, we can define the ExternalSecret resource.
-A pre-filled manifest is saved at `/root/assets/externalsecrets.yaml`. You can use the editor tab to edit.
+A prefilled manifest is saved at `/root/assets/externalsecrets.yaml`. You can use the editor tab to edit.
 
-We need to specify :
-* A reference to the SecretsStore we created previously : 
+We need to specify:
+* A reference to the SecretsStore we created previously:
 ```yaml
 secretStoreRef:
     name: "openbao-secret-store"
     kind: "SecretStore"
 ```
-* The target Kubernetes secret :
+* The target Kubernetes secret:
 ```yaml
 target:
     # the name of the target Kubernetes secret
     name: my-app-secret
 ```
-* The secret we want to fetch from OpenBao :
+* The secret we want to fetch from OpenBao:
 ```yaml
   data:
       # the key in the target Kubernetes secret where the value will be stored
     - secretKey: my-secret
       remoteRef:
-        # path to the secret in OpenBao. We can ommit the usual `kv/data/` here.
+        # path to the secret in OpenBao. We can omit the usual `kv/data/` here.
         key: openbao-eso-lab
         # the key of the value we want to fetch
         property: secret
@@ -51,7 +51,7 @@ spec:
       # the key in the target Kubernetes secret where the value will be stored
     - secretKey: my-secret
       remoteRef:
-        # path to the secret in OpenBao. We can ommit the usual `kv/data/` here.
+        # path to the secret in OpenBao. We can omit the usual `kv/data/` here.
         key: openbao-eso-lab
         # the key of the value we want to fetch
         property: secret
