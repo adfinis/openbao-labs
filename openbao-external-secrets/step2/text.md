@@ -15,7 +15,7 @@ Then we need to configure the authentication method and set the `kubernetes_host
 
 In this lab we are running OpenBao and ESO on the same cluster, so the config above is sufficient. In a productive environment, we would likely run OpenBao on a cluster that is separated from the workload fetching the secret. In that case we would need to set some additional configuration parameters depending on the environment. [The project documentation](https://openbao.org/docs/auth/kubernetes/#kubernetes-121) provides an overview of those configuration options depending on a few scenarios.
 
-We still have to configure a role in our authentication method. Here we need to reference the service accounts allowed to use the role. Here we allow the service account `my-app` from the namespace `lab`. We will see why we use `alias_name_source=serviceaccount_name` in the next step.
+We still have to configure a role in our authentication method. Here we need to reference the service accounts allowed to use the role. In this case, allow the service account `my-app` from the namespace `lab`. We will see why we use `alias_name_source=serviceaccount_name` in the next step.
 
 ```bash
 bao write auth/kubernetes/role/lab \
