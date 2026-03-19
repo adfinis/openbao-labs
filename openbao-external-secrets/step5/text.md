@@ -1,6 +1,5 @@
 Now that our SecretStore resource is ready, we can create an [ExternalSecret](https://external-secrets.io/latest/api/externalsecret/) resource to fetch the secret.
 
-Now that we have a secret, we can define the ExternalSecret resource.
 A prefilled manifest is saved at `/root/assets/externalsecrets.yaml`. You can use the editor tab to edit.
 
 We need to specify:
