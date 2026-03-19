@@ -8,7 +8,7 @@ Let's start by enabling the authentication method:
 
 * `bao auth enable kubernetes`
 
-Then we need to configure the authentication method and set the `kubernetes_host` parameters to the control plane address.
+Then we need to configure the authentication method and set the `kubernetes_host` parameters to the control plane address:
 
 * `kubectl cluster-info` to get the control plane address
 * `bao write auth/kubernetes/config kubernetes_host=https://<control-plane-address>:<port>`
