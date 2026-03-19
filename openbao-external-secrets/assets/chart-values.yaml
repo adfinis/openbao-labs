@@ -18,6 +18,7 @@ server:
       storage "raft" {
         path = "/openbao/data"
       }
+      # Static seal should only be used cautiously in production.
       seal "static" {
         current_key_id = "20260302-1"
         current_key = "file:///bao/unseal/unseal-20260302-1.key"
