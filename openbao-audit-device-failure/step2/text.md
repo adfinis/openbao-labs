@@ -1,4 +1,4 @@
-Ho no something broke and OpenBao is sealed and won't respond to request anymore.
+Oh no, something broke and OpenBao is sealed and won't respond to requests anymore.
 
 * `bao status`
 
@@ -15,6 +15,6 @@ Sealed                   true
 
 ```
 [INFO]  core: vault is sealed
-``` 
+```
 
-Here you can try solving it by yourself, or move to the next step and follow along.
+Here you can try solving it yourself, or move to the next step and follow along.

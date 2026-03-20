@@ -19,9 +19,9 @@ drwxrwxr-x 17 root syslog  4096 Mar 20 09:42 ..
 -rw-------  1 root root   16439 Mar 20 09:44 audit.log
 ``` 
 
-Here we can san that `/var/log/openbao` is owned by root and only writeable by that user.
+Here we can see that `/var/log/openbao` is owned by root and only writable by that user.
 
-Let's check with which user is OpenBao running.
+Let's check with which user OpenBao is running.
 
 * `systemctl show -p User openbao.service` 
 
