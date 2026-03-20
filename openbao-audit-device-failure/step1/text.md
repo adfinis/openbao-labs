@@ -18,7 +18,7 @@ OpenBao is installed locally and running as a systemd service.
 
 In OpenBao [audit devices](https://openbao.org/docs/audit/) keep a trace of all request to OpenBao and their responses.
 
-One audit devices is alrady enabled on this sever. It saves audit logs in file at `/var/log/openbao/audit.log`. You can check this with with the following command :
+One audit devices is already enabled on this sever. It saves audit logs in file at `/var/log/openbao/audit.log`. You can check this with with the following command :
 
 * `bao audit list -detailed`
 

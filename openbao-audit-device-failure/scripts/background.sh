@@ -17,6 +17,7 @@ openssl rand -out /etc/openbao/unseal/unseal-20260302-1.key 32
 mv /root/assets/openbao.hcl /etc/openbao/
 mv /root/assets/openbao.service /etc/systemd/system/openbao.service
 
-
 sudo systemctl daemon-reload
 sudo systemctl enable --now openbao
+
+echo done > /tmp/ready
