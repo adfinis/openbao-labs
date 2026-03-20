@@ -1,3 +1,7 @@
+ui            = true
+cluster_addr  = "https://127.0.0.1:30201"
+api_addr      = "https://127.0.0.1:30200"
+
 listener "tcp" {
   tls_disable = 1
   address = "[::]:30200"
@@ -10,17 +14,15 @@ seal "static" {
   current_key_id = "20260302-1"
   current_key = "file:///etc/openbao/unseal/unseal-20260302-1.key"
 }
-initialize "init-config" {
-  request "enable-audit" {
-    operation = "update"
-    path = "sys/audit/file"
-    data = {
-      type = "file"
-      options = {
-        file_path = "/var/log/openbao/audit.log"
-      }
-    }
+
+audit "file" "to-file" {
+  description = "File audit device"
+  options {
+    file_path = "/var/log/openbao/audit.log"
   }
+}
+
+initialize "init-config" {
   request "admin-policy" {
     operation = "create"
     path = "sys/policies/acl/admin"
