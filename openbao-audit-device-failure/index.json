@@ -21,6 +21,10 @@
       {
         "title": "Recovery",
         "text": "step3/text.md"
+      },
+      {
+        "title": "Prevent future failure",
+        "text": "step4/text.md"
       }
     ],
     "assets": {

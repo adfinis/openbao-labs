@@ -1,4 +1,4 @@
-Ho no something broke, and OpenBao is sealed and doesn't respond to request anymore.
+Ho no something broke and OpenBao is sealed and won't respond to request anymore.
 
 * `bao status`
 
