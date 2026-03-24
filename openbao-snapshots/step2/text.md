@@ -11,7 +11,7 @@ It's good that we took a snapshot earlier. We can restore it.
 
 The KV secrets engine and all the secrets it contained should now be back. First you will need to log back in.
 
-* `bao login -method userpass username=admin
+* `bao login -method userpass username=admin`
 * `bao list kv/data/`
 * `bao read kv/data/db/credentials`
 
