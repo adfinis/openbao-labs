@@ -53,7 +53,7 @@ metadata:
 spec:
   provider:
     vault:
-      # run `echo $BAO_ADDR` to get the server address 
+      # run `echo $BAO_ADDR`{{}} to get the server address 
       server: <server-address>
       # path to the KV secrets engine
       path: "kv"

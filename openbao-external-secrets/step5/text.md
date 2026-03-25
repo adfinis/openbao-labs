@@ -21,7 +21,7 @@ target:
       # the key in the target Kubernetes secret where the value will be stored
     - secretKey: my-secret
       remoteRef:
-        # path to the secret in OpenBao. We can omit the usual `kv/data/` here.
+        # path to the secret in OpenBao. We can omit the usual `kv/data/`{{}} here.
         key: openbao-eso-lab
         # the key of the value we want to fetch
         property: secret
@@ -50,7 +50,7 @@ spec:
       # the key in the target Kubernetes secret where the value will be stored
     - secretKey: my-secret
       remoteRef:
-        # path to the secret in OpenBao. We can omit the usual `kv/data/` here.
+        # path to the secret in OpenBao. We can omit the usual `kv/data/`{{}} here.
         key: openbao-eso-lab
         # the key of the value we want to fetch
         property: secret
