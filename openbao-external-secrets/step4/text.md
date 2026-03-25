@@ -15,7 +15,7 @@ A pre-filled manifest is saved at `/root/assets/secretstore.yaml`. You can use t
 We have to specify :
 * The server address (you can use `echo $BAO_ADDR` to find it out)
 ```yaml
-      # run `echo $BAO_ADDR` to get the server address 
+      # run `echo $BAO_ADDR`{{}} to get the server address 
       server: <server-address>
 ```
 * The path to the KV secrets engine: `path: "kv"`
