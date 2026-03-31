@@ -1,0 +1,126 @@
+global:
+  severTelemetry:
+    prometheusOperator: 
+  tlsDisable: true
+injector:
+  enabled: false
+agent:
+  enabled: false
+server:
+  enabled: true
+  updateStrategyType: "RollingUpdate"
+  logLevel: "info"
+  logFormat: "standard"
+  extraInitContainers:
+    - name: create-missing-files
+      image: busybox
+      command: ["sh", "-c"]
+      args:
+        - |
+          if [ -e /openbao/original-init/$HOSTNAME.hcl ]; then
+            cp /openbao/original-init/$HOSTNAME.hcl /openbao/shared-init/$HOSTNAME.hcl
+          else
+            touch /openbao/shared-init/$HOSTNAME.hcl
+          fi
+      env:
+        - name: HOSTNAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+      volumeMounts:
+        - name: init-config
+          mountPath: /openbao/original-init
+        - name: shared-config
+          mountPath: /openbao/shared-init
+  extraArgs: "-config=/openbao/shared-init/$HOSTNAME.hcl"
+  affinity: |
+      podAntiAffinity: {} 
+  volumes:
+    - name: static-unseal-key
+      secret:
+        secretName: openbao-unseal-key
+    - name: shared-config
+      emptyDir: {}
+    - name: init-config
+      configMap:
+        name: openbao-init
+  volumeMounts:
+    - name: static-unseal-key
+      mountPath: /bao/unseal
+    - name: init-config
+      mountPath: /openbao/original-init
+    - name: shared-config
+      mountPath: /openbao/shared-init
+  ha:
+    enabled: true
+    raft:
+      setNodeId: true
+      enabled: true
+      config: |
+        ui = true
+        cluster_name = "openbao.labs.killercoda"
+
+        listener "tcp" {
+          address = "0.0.0.0:8200"
+          cluster_address = "0.0.0.0:8201"
+          tls_disable = true
+        }
+        
+        storage "raft" {
+          path = "/openbao/data"
+          retry_join {
+            leader_api_addr = "http://openbao-internal.openbao.svc.cluster.local:8200"
+          }
+        }
+        
+        seal "static" {
+          current_key_id = "20260302-1"
+          current_key = "file:///bao/unseal/unseal-20260302-1.key"
+        } 
+
+        service_registration "kubernetes" {}
+extraObjects:
+  - apiVersion: v1
+    kind: ConfigMap
+    metadata:
+      name: openbao-init
+      namespace: '{{ .Release.Namespace }}'
+      annotations:
+        "helm.sh/hook": pre-install
+    data:
+      '{{ template "openbao.fullname" . }}-0.hcl': |
+        initialize "userpass" {
+          request "admin-policy" {
+            operation = "create"
+            path = "sys/policies/acl/admin"
+            data = {
+              "policy" = "path \"*\" {\n    capabilities = [\"create\", \"read\", \"patch\", \"update\", \"delete\", \"list\", \"sudo\"]\n}\n"
+            }
+           }
+           request "enable-userpass" {
+            operation = "create"
+            path = "sys/auth/userpass"
+            data = {
+               type = "userpass"
+             }
+           }
+           request "create-admin" {
+             operation = "create"
+             path = "auth/userpass/users/admin"
+             data = {
+               password = "admin123"
+               token_policies = "admin"
+             }
+           }
+           request "mount-kv" {
+             operation = "create"
+            path = "sys/mounts/kv"
+             data = {
+               type = "kv"
+               description = "company kv secrets engine"
+               options = {
+                 version = "2"
+               }
+             }
+           }
+        }
