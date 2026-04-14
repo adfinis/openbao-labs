@@ -72,6 +72,7 @@ We can see in the logs that during the startup, the node initiated a recovery du
 ```
 
 We can also verify that it's now a single-node "cluster":
+
 * `bao operator raft list-peers`
 
 ```

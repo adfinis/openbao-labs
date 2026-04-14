@@ -21,7 +21,7 @@ Code: 500. Errors:
 command terminated with exit code 2
 ```
 
-Let's check the pods :
+Let's check the pods:
 
 * `kubectl get pods -n openbao`
 
