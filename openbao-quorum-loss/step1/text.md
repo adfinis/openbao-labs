@@ -31,7 +31,7 @@ openbao-1    openbao-1.openbao-internal:8201    follower    true
 openbao-2    openbao-2.openbao-internal:8201    follower    true
 ```
 
-When running in HA mode, each node can have two states: `leader` or `follower`. At any time only one node can be a leader (active) and process the requests. Followers (standby) will redirect all requests to the leader node. Standby nodes will only replicate data from the current leader. If the active node fails, a new leader is elected from the nodes that are left.
+When running in HA mode, each node can have two states: `leader` or `follower`. At any time only one node can be a leader (active) and process write requests. By default followers (standby) will redirect all write requests to the leader node. Since 2.5.0, standby nodes also handle read requests by default. Standby nodes will replicate data from the current leader. If the active node fails, a new leader is elected from the remaining nodes.
 
 ## Raft Quorum
 
@@ -41,7 +41,7 @@ For example :
 
 * For a 3-node cluster (our scenario)
   * Quorum is 2 (`(3+1)/2=2`).
-* Failure tolerance is 1 node.
+  * Failure tolerance is 1 node.
 * For a 5-node cluster: 
   * Quorum is 3 (`(5+1)/2=3`).
   * Failure tolerance is 2.
