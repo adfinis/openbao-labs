@@ -1,5 +1,5 @@
 {
-  "title": "Fire-drill: Raft quorum loss",
+  "title": "Fire Drill: Raft Quorum Loss",
   "description": "Learn to deal with Raft quorum loss in OpenBao",
   "details": {
     "intro": {
