@@ -1,0 +1,38 @@
+{
+  "title": "Fire Drill: Raft Quorum Loss",
+  "description": "Learn to deal with Raft quorum loss in OpenBao",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "foreground":"scripts/foreground.sh",
+      "background":"scripts/background.sh"
+    },
+    "steps": [
+      {
+        "title": "Context",
+        "text": "step1/text.md"
+      },
+      {
+        "title": "Quorum loss",
+        "text": "step2/text.md",
+        "foreground":"step2/scripts/foreground.sh",
+        "background":"step2/scripts/background.sh"
+      },
+      {
+        "title": "Recovery",
+        "text": "step3/text.md"
+      }
+    ],
+    "assets": {
+      "host01": [
+        {"file": "**", "target": "/root/assets", "chmod": "+rwx"}
+      ]
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}

@@ -1,0 +1,7 @@
+[
+  {
+    "id": "openbao-0",
+    "address": "openbao-0.openbao-internal.openbao.svc.cluster.local:8201",
+    "non_voter": false
+  }
+]
