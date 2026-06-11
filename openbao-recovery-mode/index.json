@@ -1,0 +1,40 @@
+{
+  "title": "OpenBao recovery mode",
+  "description": "Learn about OpenBao recovery mode",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "foreground":"scripts/foreground.sh",
+      "background":"scripts/background.sh"
+    },
+    "steps": [
+      {
+        "title": "Context",
+        "text": "step1/text.md"
+      },
+      {
+        "title": "Start OpenBao in recovery mode",
+        "text": "step2/text.md"
+      },
+      {
+        "title": "Generate recovery token",
+        "text": "step3/text.md"
+      },
+      {
+        "title": "Explore recovery mode",
+        "text": "step4/text.md"
+      }
+    ],
+    "assets": {
+      "host01": [
+        {"file": "**", "target": "/root/assets", "chmod": "+rwx"}
+      ]
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}
