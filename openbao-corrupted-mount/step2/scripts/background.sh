@@ -10,3 +10,5 @@ for id in $(bao list -format=json sys/raw/core/namespaces | jq -r '.[]');do
 done;
 
 systemctl restart openbao
+
+echo done > /tmp/ready
