@@ -1,6 +1,6 @@
 {
   "title": "Fire Drill: Corrupted Namespace Mount",
-  "description": "Learn how to use recovery to fix a corrupted",
+  "description": "Learn how to use recovery mode to fix a corrupted namespace mount",
   "details": {
     "intro": {
       "text": "intro.md",
