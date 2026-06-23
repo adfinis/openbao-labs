@@ -1,0 +1,42 @@
+{
+  "title": "Fire Drill: Corrupted Namespace Mount",
+  "description": "Learn how to use recovery mode to fix a corrupted namespace mount",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "foreground":"scripts/foreground.sh",
+      "background":"scripts/background.sh"
+    },
+    "steps": [
+      {
+        "title": "Context",
+        "text": "step1/text.md"
+      },
+      {
+        "title": "Mount table corruption",
+        "text": "step2/text.md",
+        "foreground":"step2/scripts/foreground.sh",
+        "background":"step2/scripts/background.sh"
+      },
+      {
+        "title": "Start OpenBao in recovery mode",
+        "text": "step3/text.md"
+      },
+      {
+        "title": "Fix corrupt namespace mount",
+        "text": "step4/text.md"
+      }
+    ],
+    "assets": {
+      "host01": [
+        {"file": "**", "target": "/root/assets", "chmod": "+rwx"}
+      ]
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}
